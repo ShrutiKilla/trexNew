@@ -12,7 +12,7 @@ var score=0;
 
 var gameOver, restart;
 
-localStorage["HighestScore"] = 0;
+
 
 function preload(){
   trex_running =   loadAnimation("trex1.png","trex3.png","trex4.png");
@@ -35,7 +35,7 @@ function preload(){
 
 function setup() {
   createCanvas(600, 200);
-  background('blue');
+  
   trex = createSprite(50,180,20,50);
   
   trex.addAnimation("running", trex_running);
@@ -70,7 +70,7 @@ function setup() {
 
 function draw() {
   //trex.debug = true;
-  background(255);
+  background("brown");
   text("Score: "+ score, 500,50);
   
   if (gameState===PLAY){
@@ -185,10 +185,7 @@ function reset(){
   
   trex.changeAnimation("running",trex_running);
   
-  if(localStorage["HighestScore"]<score){
-    localStorage["HighestScore"] = score;
-  }
-  console.log(localStorage["HighestScore"]);
+ 
   
   score = 0;
   
